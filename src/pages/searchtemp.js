@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Card  from 'react-bootstrap/Card'
 import SearchBar from './../components/searchbar'
 import SearchResults from './../components/searchresult'
 
 function Searchtemp () {
+    const [books, setBooks] = useState([])
+    const [input, setInput] = useState([])
+
+    // function handleInput(e) {
+    //     const 
+    // }
 
     return (
         <div>
