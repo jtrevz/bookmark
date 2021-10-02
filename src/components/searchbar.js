@@ -10,6 +10,7 @@ function SearchBar () {
    const handleInputChange = (e) => {
         const inputValue = e.target.value;
         setInput(inputValue)
+
         BookAPI.search(input + 'maxResults=10')
         .then(res => {
             setBooks(res.data.items)
@@ -46,15 +47,15 @@ function SearchBar () {
             </Row>
             <Row>
                 <Col sm={{span:10}}>
-                        {books ==! undefined ?
+                        {/* {books ==! undefined ? */}
                             <ListGroup>
-                            {books.map(book => (
+                            {books && books.map(book => (
                             <ListGroup.Item>{book.volumeInfo.title}</ListGroup.Item> 
                             ))}
                             </ListGroup>
-                            :
+                            {/* :
                             <div></div>
-                    }
+                    } */}
                 </Col>
             </Row>
             </Container>
