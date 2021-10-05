@@ -1,0 +1,20 @@
+@font-face {
+    src: url(fonts/edda.filled.ttf);
+    font-family: edda;
+}
+
+/* suggestion styling */
+.suggestion-list {
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background-color: #dde4d8;
+}
+
+.suggestion-thumbnail {
+    max-height: 10%;
+    font-family: edda;
+}
+
+

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Card  from 'react-bootstrap/Card'
-import SearchBar from './../components/searchbar'
+import SearchBar from '../components/SearchBar'
 import SearchResults from './../components/searchresult'
 
 function Searchtemp () {

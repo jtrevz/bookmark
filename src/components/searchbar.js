@@ -1,22 +1,32 @@
 import React, {useState} from 'react';
 import {FormControl, FormGroup, Button, InputGroup, ListGroup, Row, Container, Col } from 'react-bootstrap'
-import BookAPI from './../utils/BookAPI'
-
+import BookAPI from '../utils/BookAPI'
+import './styles/SearchBar.css'
 
 function SearchBar () {
     const [books, setBooks] = useState([])
     const [input, setInput] = useState([])
+    const [suggestion, setSuggestion] = useState([])
 
-   const handleInputChange = (e) => {
+   const handleInputChange = async  (e) => {
         const inputValue = e.target.value;
+        console.log(e.target.value);
         setInput(inputValue)
 
-        BookAPI.search(input + 'maxResults=10')
+        if (input.length > 0) {
+            BookAPI.search(input)
         .then(res => {
-            setBooks(res.data.items)
-            // console.log(books[0]);
-        })
+            setSuggestion(res.data.items)
+        })}
     }
+
+    const defaultThumbnail = (title)=> {
+        return "./img/book-thumbnail(pink).png"
+    }
+
+    //BETTER API URL SPECIFICS
+    //CHANGE BOOKS INTO SUGGESTION
+    //
 
     // function handleSubmit(e) {
 
@@ -47,15 +57,15 @@ function SearchBar () {
             </Row>
             <Row>
                 <Col sm={{span:10}}>
-                        {/* {books ==! undefined ? */}
-                            <ListGroup>
-                            {books && books.map(book => (
-                            <ListGroup.Item>{book.volumeInfo.title}</ListGroup.Item> 
+                            <ListGroup className="suggestion-list">
+                            {input && suggestion.map((book, i, key) => (
+                            <ListGroup.Item id={i + 1} className='suggestion'>
+                                <img 
+                                src={(book.volumeInfo.imageLinks !== undefined) ? book.volumeInfo.imageLinks.thumbnail : require('./img/book-thumbnail(pink).png')}
+                                className='suggestion-thumbnail'/>
+                                {book.volumeInfo.title}</ListGroup.Item> 
                             ))}
                             </ListGroup>
-                            {/* :
-                            <div></div>
-                    } */}
                 </Col>
             </Row>
             </Container>
