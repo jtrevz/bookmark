@@ -50,3 +50,16 @@
     background-color: #3A4B3A;
     color: #fff;
 } 
+
+.navLink {
+    font-family: "Helvetica Neue",Helvetica,Arial;
+}
+
+.button-container {
+    margin: 1px;
+}
+
+.searchbar-container {
+    margin-top: auto;
+    margin-bottom: auto;
+}

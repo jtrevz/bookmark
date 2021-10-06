@@ -33,11 +33,11 @@ function SearchBar () {
     }
 
     return (
-        <div>
-        <InputGroup className="mb-3 ">
+        <div className="searchbar-container">
+        <InputGroup>
             <Container fluid='md'>
             <Row fluid>
-                <Col sm={10}>
+                <Col sm={8}>
                     <FormControl
                         // onSubmit={handleSubmit}
                         placeholder="Search by title, author, or ISBN"
@@ -47,7 +47,7 @@ function SearchBar () {
                         onChange={handleInputChange}
                     />
                 </Col>
-                <Col sm={2}>
+                <Col sm={2} className='button-container'>
                     <Button
                         className='search-button' 
                         type='submit'
