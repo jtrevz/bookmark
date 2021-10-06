@@ -47,12 +47,12 @@ function SearchBar () {
                         onChange={handleInputChange}
                     />
                 </Col>
-                <Col sm={2} className='button-container'>
+                <Col sm={2}>
                     <Button
-                        className='search-button' 
                         type='submit'
                         onClick={handleSubmit}
-                        variant='custom'>
+                        variant='custom'
+                        className='search-button'>
                         Search
                     </Button>
                 </Col>
