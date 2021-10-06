@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import Card  from 'react-bootstrap/Card'
+import {Container, Navbar}  from 'react-bootstrap'
 import SearchBar from '../components/SearchBar'
-import SearchResults from './../components/searchresult'
+import SearchResults from '../components/searchresult'
+import smallLogo from './../components/img/textLogo.svg'
+import './styles/SearchTemp.css'
+
 
 function Searchtemp () {
     const [books, setBooks] = useState([])
@@ -13,13 +16,19 @@ function Searchtemp () {
 
     return (
         <div>
-            <div >
-            <Card>
-                <Card.Body>
-                    Search Books Here!
+            <div>
+            <Navbar className='navbar'>
+                <Container>
+                    <Navbar.Brand>
+                        <img
+                        alt="bookmark logo"
+                        src= {smallLogo}
+                        className='logo-img'
+                        />
+                    </Navbar.Brand>
                     <SearchBar/>
-                    </Card.Body>
-            </Card>
+                </Container>
+            </Navbar>
             </div>
             <div>
                 <SearchResults/>

@@ -1,6 +1,7 @@
 import SearchBar from './components/SearchBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Searchtemp from './pages/searchtemp'
+import Searchtemp from './pages/SearchTemp'
+import './App.css';
 
 function App() {
   return (
