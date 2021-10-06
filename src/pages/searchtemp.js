@@ -3,16 +3,23 @@ import {Container, Nav, Navbar, NavDropdown}  from 'react-bootstrap'
 import SearchBar from '../components/SearchBar'
 import SearchResults from '../components/searchresult'
 import smallLogo from './../components/img/textLogo.svg'
+import BookAPI from './../utils/BookAPI'
 import './styles/SearchTemp.css'
 
 
 function Searchtemp () {
     const [books, setBooks] = useState([])
     const [input, setInput] = useState([])
+    const[book, setBook] = useState({})
 
-    // function handleInput(e) {
-    //     const 
-    // }
+    useEffect (() => {
+        if(!book){
+            BookAPI.search('Pride and Prejudice')
+            .then(res => {
+                setBook(res.data.items[0])
+                console.log(book)
+            })}
+    })
 
     return (
         <div>
