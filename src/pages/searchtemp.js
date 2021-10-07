@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Container, Nav, Navbar, NavDropdown}  from 'react-bootstrap'
+import {Container, Nav, Navbar, NavDropdown, Card}  from 'react-bootstrap'
 import SearchBar from '../components/SearchBar'
 import SearchResults from '../components/searchresult'
 import smallLogo from './../components/img/textLogo.svg'
@@ -12,19 +12,23 @@ function Searchtemp () {
     const [input, setInput] = useState([])
     const[book, setBook] = useState({})
 
-    useEffect (() => {
+    async function tempBook () {
+
+        await BookAPI.search('Pride and Prejudice')
+        .then(res => setBook(res.data.items[0]))
+        .then(console.log(book))
+    }
+
+    useEffect (() =>  {
         if(!book){
-            BookAPI.search('Pride and Prejudice')
-            .then(res => {
-                setBook(res.data.items[0])
-                console.log(book)
-            })}
-    })
+            tempBook()
+        }   
+    }, [book])
 
     return (
         <div>
             <div>
-            <Navbar 
+            <Navbar
                 className='navbar'
                 collapseOnSelect expand="md"
             >
@@ -59,8 +63,12 @@ function Searchtemp () {
                 </Container>
             </Navbar>
             </div>
-            <div>
+            <div className='content-container'>
                 {/* <SearchResults/> */}
+                <Card className='book-card'>
+                    <Card.Img src=''>
+                    </Card.Img>
+                </Card>
             </div>
         </div>
     )

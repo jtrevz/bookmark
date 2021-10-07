@@ -7,3 +7,8 @@
 .logo-img {
     height: 55px;
 }
+
+.content-container {
+    background-color: #f8f0f3;
+    border-radius: 20px;
+}
