@@ -72,8 +72,12 @@ function Searchtemp () {
                                 </Card.Img>
                             </div>
                             <div className='book-content'>
-                            <Card.Title>Pride and Prejudice</Card.Title>
-                            
+                                <div className='at-box'>
+                                    <Card.Title>Pride and Prejudice</Card.Title>
+                                    <Card.Text className='author'>
+                                        Jane Austen
+                                    </Card.Text>
+                                </div>
                             <Card.Text>
                                 Some quick example text to build on the card title and make up the bulk of
                                 the card's content.
