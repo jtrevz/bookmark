@@ -9,6 +9,33 @@
 }
 
 .content-container {
-    background-color: #f8f0f3;
-    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.book-card{
+    flex-direction: row;
+    justify-content: space-around;
+    border: solid;
+    background-color: transparent;
+}
+
+.book-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.img-fit{
+    height: 400px; 
+    width: 300px;
+    padding: 1%;
+    display: flex;
+}
+
+
+.bookPic{
+    object-fit: cover;
 }

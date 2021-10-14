@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {Container, Nav, Navbar, NavDropdown, Card}  from 'react-bootstrap'
+import {Container, Nav, Navbar, NavDropdown, Card} from 'react-bootstrap'
 import SearchBar from '../components/SearchBar'
 import SearchResults from '../components/searchresult'
 import smallLogo from './../components/img/textLogo.svg'
 import BookAPI from './../utils/BookAPI'
 import './styles/SearchTemp.css'
+import bookPic from './../components/img/book-thumbnail(pink).png'
 
 
 function Searchtemp () {
@@ -64,11 +65,22 @@ function Searchtemp () {
             </Navbar>
             </div>
             <div className='content-container'>
-                {/* <SearchResults/> */}
-                <Card className='book-card'>
-                    <Card.Img src=''>
-                    </Card.Img>
-                </Card>
+                <Container>
+                        <Card className='book-card'>
+                            <div className='img-fit'>
+                                <Card.Img className='bookPic d-flex justify-content-center'src={bookPic} >
+                                </Card.Img>
+                            </div>
+                            <div className='book-content'>
+                            <Card.Title>Pride and Prejudice</Card.Title>
+                            
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the bulk of
+                                the card's content.
+                            </Card.Text>
+                            </div>
+                        </Card>
+                </Container>
             </div>
         </div>
     )
